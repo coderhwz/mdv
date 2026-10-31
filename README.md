@@ -17,6 +17,8 @@ A lightweight native macOS Markdown viewer built with AppKit. Read-only, with a 
 
 ## 构建与运行
 
+编译好的应用可从 [GitHub Releases](https://github.com/coderhwz/mdv/releases/latest) 下载。解压后将 `MDV.app` 拖入「应用程序」。发行包为本地临时签名，尚未进行 Apple Developer ID 签名及公证。
+
 运行需要 macOS 13+。构建需要 Swift 6+（Xcode 16+ 或对应版本的 Command Line Tools），当前构建默认针对本机架构。
 
 ```sh
@@ -27,6 +29,12 @@ open dist/MDV.app
 ```
 
 拖动 `dist/MDV.app` 到「应用程序」即可安装。
+
+同时构建 Apple Silicon 和 Intel 通用版本：
+
+```sh
+./scripts/build.sh --arch arm64 --arch x86_64
+```
 
 ## 关联 .md 文件
 
